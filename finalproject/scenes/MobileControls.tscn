@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4de168bwuqj2"]
+
+[ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="1_0i7bk"]
+
+[node name="MobileControls" type="CanvasLayer"]
+
+[node name="MoveLeft" type="TouchScreenButton" parent="."]
+position = Vector2(101, 486)
+texture_normal = ExtResource("1_0i7bk")
+action = "move_left"
+
+[node name="MoveRight" type="TouchScreenButton" parent="."]
+position = Vector2(285, 484)
+texture_normal = ExtResource("1_0i7bk")
+action = "move_right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(989, 494)
+texture_normal = ExtResource("1_0i7bk")
+action = "jump"

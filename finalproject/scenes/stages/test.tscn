@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0g1mgmf01uqn"]
+
+[ext_resource type="PackedScene" uid="uid://c2enm4dpmmrd1" path="res://scenes/player.tscn" id="1_kq7ji"]
+[ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="2_h5oum"]
+[ext_resource type="PackedScene" uid="uid://d4de168bwuqj2" path="res://scenes/MobileControls.tscn" id="2_jufkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5oum"]
+size = Vector2(526.5, 219)
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_kq7ji")]
+position = Vector2(-4, -17)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-67.75, 282.5)
+shape = SubResource("RectangleShape2D_h5oum")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(181, 160)
+scale = Vector2(14.7031, 1)
+texture = ExtResource("2_h5oum")
+
+[node name="MobileControls" parent="." instance=ExtResource("2_jufkh")]
+layer = 10

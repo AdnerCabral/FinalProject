@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2enm4dpmmrd1"]
+
+[ext_resource type="Script" uid="uid://f5nxpqjqbiky" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_qlg0r"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "right_left"
+
+[sub_resource type="Animation" id="Animation_g2els"]
+resource_name = "run_right"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2els"]
+_data = {
+&"idle": SubResource("Animation_dqkch"),
+&"jump": SubResource("Animation_qlg0r"),
+&"right_left": SubResource("Animation_qhqgy"),
+&"run_right": SubResource("Animation_g2els")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g2els")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
