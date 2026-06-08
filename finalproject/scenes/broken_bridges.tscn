@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfj410altmk36"]
+
+[ext_resource type="Texture2D" uid="uid://bq8fs0nxbcg3t" path="res://assets/Midground.png" id="1_korwo"]
+
+[node name="BrokenBridges" type="Parallax2D"]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(3016, 0)
+repeat_times = 999
+
+[node name="BackgroundGround" type="Sprite2D" parent="."]
+light_mask = 256
+visibility_layer = 256
+z_index = -5
+position = Vector2(584, 379)
+texture = ExtResource("1_korwo")

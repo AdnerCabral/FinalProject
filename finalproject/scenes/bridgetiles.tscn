@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmeefckt4gdaf"]
+
+[ext_resource type="Texture2D" uid="uid://cf07rdc52yvqi" path="res://assets/NormalGround.png" id="1_xbsbh"]
+
+[node name="Bridge Tiles" type="Parallax2D"]
+visible = false
+repeat_size = Vector2(600, 0)
+repeat_times = 999
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 3
+position = Vector2(465, 9)
+
+[node name="Groun1" type="Sprite2D" parent="Node2D"]
+light_mask = 256
+visibility_layer = 256
+z_index = -5
+position = Vector2(1183, 10)
+texture = ExtResource("1_xbsbh")
+
+[node name="Groun2" type="Sprite2D" parent="Node2D"]
+light_mask = 256
+visibility_layer = 256
+z_index = -5
+position = Vector2(1178, 10)
+texture = ExtResource("1_xbsbh")
+offset = Vector2(205, 0)
+
+[node name="Groun3" type="Sprite2D" parent="Node2D"]
+light_mask = 256
+visibility_layer = 256
+z_index = -5
+position = Vector2(1583, 10)
+texture = ExtResource("1_xbsbh")

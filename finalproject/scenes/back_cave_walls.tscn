@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnknvmpgmdl4q"]
+
+[ext_resource type="Texture2D" uid="uid://c4pkpf6bckkng" path="res://assets/BackestWallTile.png" id="1_vfy8f"]
+
+[node name="BackCaveWalls" type="Parallax2D"]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(394, 0)
+repeat_times = 999
+
+[node name="BackestWallTile" type="Sprite2D" parent="."]
+light_mask = 256
+visibility_layer = 256
+z_index = -6
+position = Vector2(584, 379)
+texture = ExtResource("1_vfy8f")
