@@ -1,27 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0g1mgmf01uqn"]
+[gd_scene load_steps=10 format=3 uid="uid://b0g1mgmf01uqn"]
 
 [ext_resource type="PackedScene" uid="uid://c2enm4dpmmrd1" path="res://scenes/player.tscn" id="1_kq7ji"]
-[ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="2_h5oum"]
+[ext_resource type="PackedScene" uid="uid://dakyacake1bny" path="res://scenes/Map.tscn" id="1_vj8yw"]
+[ext_resource type="PackedScene" uid="uid://2gss0mc8sibv" path="res://scenes/furthest_bridges.tscn" id="1_voj6e"]
+[ext_resource type="PackedScene" uid="uid://dnknvmpgmdl4q" path="res://scenes/back_cave_walls.tscn" id="1_xaxsv"]
+[ext_resource type="PackedScene" uid="uid://bfj410altmk36" path="res://scenes/broken_bridges.tscn" id="2_e2dbe"]
 [ext_resource type="PackedScene" uid="uid://d4de168bwuqj2" path="res://scenes/MobileControls.tscn" id="2_jufkh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5oum"]
-size = Vector2(526.5, 219)
+[ext_resource type="PackedScene" uid="uid://c6ru55u3ra7kj" path="res://scenes/fence.tscn" id="4_xaxsv"]
+[ext_resource type="PackedScene" uid="uid://cmeefckt4gdaf" path="res://scenes/bridgetiles.tscn" id="5_senjr"]
+[ext_resource type="PackedScene" uid="uid://ih8h3m1lsbsj" path="res://scenes/vignetanyahu.tscn" id="8_e2dbe"]
 
 [node name="Test" type="Node2D"]
 
+[node name="Node2D" parent="." instance=ExtResource("1_vj8yw")]
+position = Vector2(2245, 128)
+
+[node name="FurthestBridges" parent="." instance=ExtResource("1_voj6e")]
+visible = false
+scroll_offset = Vector2(-8, -231)
+
+[node name="BrokenBridges" parent="." instance=ExtResource("2_e2dbe")]
+visible = false
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-539, -319)
+repeat_size = Vector2(3275, 0)
+
+[node name="BackCaveWalls" parent="." instance=ExtResource("1_xaxsv")]
+visible = false
+scroll_offset = Vector2(-19, -56)
+
 [node name="Player" parent="." instance=ExtResource("1_kq7ji")]
-position = Vector2(-4, -17)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-67.75, 282.5)
-shape = SubResource("RectangleShape2D_h5oum")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(181, 160)
-scale = Vector2(14.7031, 1)
-texture = ExtResource("2_h5oum")
+position = Vector2(170, 237)
 
 [node name="MobileControls" parent="." instance=ExtResource("2_jufkh")]
 layer = 10
+
+[node name="Fence" parent="." instance=ExtResource("4_xaxsv")]
+scroll_offset = Vector2(-159, -202)
+
+[node name="Bridge Tiles" parent="." instance=ExtResource("5_senjr")]
+scroll_offset = Vector2(51, 584)
+
+[node name="Vigenetanyahu" parent="." instance=ExtResource("8_e2dbe")]
+visible = false
+z_index = -6
+position = Vector2(545, -617)
+scale = Vector2(5, 5)
