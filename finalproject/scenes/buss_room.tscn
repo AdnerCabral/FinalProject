@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgsryudg5obal"]
+
+[ext_resource type="PackedScene" uid="uid://c2enm4dpmmrd1" path="res://scenes/player.tscn" id="1_b727d"]
+[ext_resource type="PackedScene" uid="uid://d4de168bwuqj2" path="res://scenes/MobileControls.tscn" id="2_g5hjy"]
+[ext_resource type="PackedScene" uid="uid://bjts8iylffk5g" path="res://scenes/boss_map.tscn" id="3_g5hjy"]
+
+[node name="BussRoom" type="Node2D"]
+
+[node name="BossMap" parent="." instance=ExtResource("3_g5hjy")]
+position = Vector2(116, -688)
+
+[node name="Player" parent="." instance=ExtResource("1_b727d")]
+position = Vector2(118, -104)
+
+[node name="MobileControls" parent="." instance=ExtResource("2_g5hjy")]
+layer = 10

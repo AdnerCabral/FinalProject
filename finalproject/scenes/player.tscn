@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2enm4dpmmrd1"]
 
-[ext_resource type="Script" uid="uid://f5nxpqjqbiky" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://40vmy5xjimjg" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
@@ -40,4 +40,11 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -222)
+zoom = Vector2(0.8, 0.8)
+limit_left = -175
+limit_top = -1000
+limit_right = 13800
+limit_bottom = 915
+limit_smoothed = true
 position_smoothing_enabled = true

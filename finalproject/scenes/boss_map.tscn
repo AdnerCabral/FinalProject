@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjts8iylffk5g"]
+
+[ext_resource type="Texture2D" uid="uid://ija6nf0telo6" path="res://assets/Stadium.png" id="1_0k7ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k7ve"]
+size = Vector2(347.109, 112.5)
+
+[node name="BossMap" type="Node2D"]
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_0k7ve")
+
+[node name="Collisions" type="Node2D" parent="."]
+position = Vector2(1029, -83)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions"]
+position = Vector2(47, 216)
+scale = Vector2(14.08, 1)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Collisions"]
+position = Vector2(-2455, -114)
+rotation = 3.14159
+scale = Vector2(1.08314, -26.3248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D6"]
+position = Vector2(0.213074, -1)
+shape = SubResource("RectangleShape2D_0k7ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D6/CollisionShape2D"]
+position = Vector2(-2570.51, 2.89934)
+shape = SubResource("RectangleShape2D_0k7ve")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Collisions"]
+position = Vector2(4094, -1153)
+scale = Vector2(48.2805, 1.78454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D7"]
+position = Vector2(0.213074, -1)
+shape = SubResource("RectangleShape2D_0k7ve")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Collisions/StaticBody2D7"]
+position = Vector2(4094, -1153)
+scale = Vector2(48.2805, 1.78454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D7/StaticBody2D7"]
+position = Vector2(0.377428, 1290.46)
+shape = SubResource("RectangleShape2D_0k7ve")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Collisions"]
+position = Vector2(-1108, 99)
+rotation = -1.57043
+scale = Vector2(-0.94259, 1.63529)
