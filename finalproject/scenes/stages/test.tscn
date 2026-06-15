@@ -1,48 +1,63 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0g1mgmf01uqn"]
+[gd_scene load_steps=8 format=3 uid="uid://b0g1mgmf01uqn"]
 
 [ext_resource type="PackedScene" uid="uid://c2enm4dpmmrd1" path="res://scenes/player.tscn" id="1_kq7ji"]
 [ext_resource type="PackedScene" uid="uid://dakyacake1bny" path="res://scenes/Map.tscn" id="1_vj8yw"]
-[ext_resource type="PackedScene" uid="uid://2gss0mc8sibv" path="res://scenes/furthest_bridges.tscn" id="1_voj6e"]
-[ext_resource type="PackedScene" uid="uid://dnknvmpgmdl4q" path="res://scenes/back_cave_walls.tscn" id="1_xaxsv"]
-[ext_resource type="PackedScene" uid="uid://bfj410altmk36" path="res://scenes/broken_bridges.tscn" id="2_e2dbe"]
 [ext_resource type="PackedScene" uid="uid://d4de168bwuqj2" path="res://scenes/MobileControls.tscn" id="2_jufkh"]
-[ext_resource type="PackedScene" uid="uid://c6ru55u3ra7kj" path="res://scenes/fence.tscn" id="4_xaxsv"]
-[ext_resource type="PackedScene" uid="uid://cmeefckt4gdaf" path="res://scenes/bridgetiles.tscn" id="5_senjr"]
-[ext_resource type="PackedScene" uid="uid://ih8h3m1lsbsj" path="res://scenes/vignetanyahu.tscn" id="8_e2dbe"]
+[ext_resource type="AudioStream" uid="uid://vk31fx5ld7rt" path="res://assets/songfinal.mp3" id="5_xaxsv"]
+[ext_resource type="Script" uid="uid://b3y8p416dgbp3" path="res://scripts/death_boundary.gd" id="6_senjr"]
+[ext_resource type="PackedScene" uid="uid://cqybvyo4kxmjy" path="res://scenes/enemy.tscn" id="10_q502r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_senjr"]
+size = Vector2(13636.2, 1005)
 
 [node name="Test" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_vj8yw")]
+[node name="Map" parent="." instance=ExtResource("1_vj8yw")]
 position = Vector2(2245, 128)
-
-[node name="FurthestBridges" parent="." instance=ExtResource("1_voj6e")]
-visible = false
-scroll_offset = Vector2(-8, -231)
-
-[node name="BrokenBridges" parent="." instance=ExtResource("2_e2dbe")]
-visible = false
-scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(-539, -319)
-repeat_size = Vector2(3275, 0)
-
-[node name="BackCaveWalls" parent="." instance=ExtResource("1_xaxsv")]
-visible = false
-scroll_offset = Vector2(-19, -56)
 
 [node name="Player" parent="." instance=ExtResource("1_kq7ji")]
 position = Vector2(170, 237)
+speed = 350.0
+sword_damage = 10
 
 [node name="MobileControls" parent="." instance=ExtResource("2_jufkh")]
 layer = 10
 
-[node name="Fence" parent="." instance=ExtResource("4_xaxsv")]
-scroll_offset = Vector2(-159, -202)
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Bridge Tiles" parent="." instance=ExtResource("5_senjr")]
-scroll_offset = Vector2(51, 584)
+[node name="Enemy" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(2218, -42)
 
-[node name="Vigenetanyahu" parent="." instance=ExtResource("8_e2dbe")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(3978, -135)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(5631, -324)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(7355, -673)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(8624, -667)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(10602, -289)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("10_q502r")]
+position = Vector2(12355, -47)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xaxsv")
+volume_db = 5.0
+autoplay = true
+
+[node name="DeathBoundary" type="Area2D" parent="."]
 visible = false
-z_index = -6
-position = Vector2(545, -617)
-scale = Vector2(5, 5)
+collision_mask = 7
+script = ExtResource("6_senjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoundary"]
+position = Vector2(6725.88, 1737.5)
+shape = SubResource("RectangleShape2D_senjr")
+
+[connection signal="body_entered" from="DeathBoundary" to="DeathBoundary" method="_on_body_entered"]
