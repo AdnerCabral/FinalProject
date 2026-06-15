@@ -1,30 +1,136 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4de168bwuqj2"]
+[gd_scene load_steps=19 format=3 uid="uid://d4de168bwuqj2"]
 
-[ext_resource type="Texture2D" uid="uid://cfrohxi1j7xu7" path="res://icon.svg" id="1_0i7bk"]
-[ext_resource type="Script" uid="uid://dm8hs4i2blei7" path="res://scripts/HPSCRIPT.gd" id="3_oueyw"]
-[ext_resource type="Texture2D" uid="uid://cy4rda3mjua0v" path="res://assets/60HP.png" id="3_sotbg"]
+[ext_resource type="Texture2D" uid="uid://cs0c1fux7361j" path="res://assets/Controls/left.png.png" id="1_84ds4"]
+[ext_resource type="Texture2D" uid="uid://twtfc1tdnoca" path="res://assets/health_bar/0HP.png" id="2_hpex4"]
+[ext_resource type="Texture2D" uid="uid://c2m5402mkkmyo" path="res://assets/Controls/right.png" id="2_j4vtb"]
+[ext_resource type="Texture2D" uid="uid://doinikfnoek1" path="res://assets/health_bar/10HP.png" id="3_goyri"]
+[ext_resource type="Texture2D" uid="uid://bmexbnwnt3kvd" path="res://assets/Controls/up.png.png" id="3_r2ke6"]
+[ext_resource type="Texture2D" uid="uid://mlhljx7ontvb" path="res://assets/health_bar/20HP.png" id="4_kyha3"]
+[ext_resource type="Texture2D" uid="uid://c2np7vemx1dlh" path="res://assets/health_bar/30HP.png" id="5_84ds4"]
+[ext_resource type="Texture2D" uid="uid://baq6ayfad3h22" path="res://assets/health_bar/40HP.png" id="6_j4vtb"]
+[ext_resource type="Texture2D" uid="uid://dr6kbofuggqs5" path="res://assets/health_bar/50HP.png" id="7_r2ke6"]
+[ext_resource type="Texture2D" uid="uid://dmb1x4jqxsay6" path="res://assets/health_bar/60HP.png" id="8_reet5"]
+[ext_resource type="Texture2D" uid="uid://gdms6qagk5hq" path="res://assets/health_bar/70HP.png" id="9_thyss"]
+[ext_resource type="Texture2D" uid="uid://caefsxmy4vgn6" path="res://assets/health_bar/80HP.png" id="10_8s1je"]
+[ext_resource type="Texture2D" uid="uid://btln3iwcvgi5y" path="res://assets/health_bar/90HP.png" id="11_mbd1v"]
+[ext_resource type="Texture2D" uid="uid://dni78fhfdcjmr" path="res://assets/health_bar/100HP.png" id="12_56qrw"]
+[ext_resource type="Script" uid="uid://br1grkxxqhc77" path="res://scripts/health.gd" id="13_50ab8"]
+[ext_resource type="Texture2D" uid="uid://dedy5gf61328f" path="res://assets/Controls/attack.png.png" id="16_j4vtb"]
+[ext_resource type="Texture2D" uid="uid://bfh6tnr1tssht" path="res://assets/Controls/dash.png.png" id="17_r2ke6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx6f2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hpex4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_goyri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyha3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_84ds4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j4vtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r2ke6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_reet5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_thyss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8s1je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mbd1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_56qrw")
+}],
+"loop": true,
+"name": &"health",
+"speed": 0.0
+}]
 
 [node name="MobileControls" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [514.0]
 
-[node name="MoveLeft" type="TouchScreenButton" parent="."]
-position = Vector2(101, 486)
-texture_normal = ExtResource("1_0i7bk")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomLeft" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MoveLeft" type="TouchScreenButton" parent="Control/BottomLeft"]
+modulate = Color(0.0235294, 0.105882, 0.380392, 0.929412)
+position = Vector2(38, -149)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("1_84ds4")
 action = "move_left"
 
-[node name="MoveRight" type="TouchScreenButton" parent="."]
-position = Vector2(285, 484)
-texture_normal = ExtResource("1_0i7bk")
+[node name="MoveRight" type="TouchScreenButton" parent="Control/BottomLeft"]
+modulate = Color(0.0235294, 0.105882, 0.380392, 0.929412)
+position = Vector2(408, -152)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_j4vtb")
 action = "move_right"
 
-[node name="Jump" type="TouchScreenButton" parent="."]
-position = Vector2(989, 494)
-texture_normal = ExtResource("1_0i7bk")
+[node name="Jump" type="TouchScreenButton" parent="Control/BottomLeft"]
+modulate = Color(0.0235294, 0.105882, 0.380392, 0.929412)
+position = Vector2(218, -345)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_r2ke6")
 action = "jump"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="TopLeft" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(202, 103.875)
-scale = Vector2(0.9625, 0.948333)
-texture = ExtResource("3_sotbg")
-script = ExtResource("3_oueyw")
+[node name="Health" type="AnimatedSprite2D" parent="Control/TopLeft"]
+position = Vector2(265, 133)
+sprite_frames = SubResource("SpriteFrames_nx6f2")
+animation = &"health"
+script = ExtResource("13_50ab8")
+
+[node name="BottomRight" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Attack" type="TouchScreenButton" parent="Control/BottomRight"]
+position = Vector2(-454, -208)
+texture_normal = ExtResource("16_j4vtb")
+action = "attack"
+
+[node name="Dash" type="TouchScreenButton" parent="Control/BottomRight"]
+position = Vector2(-197, -207)
+texture_normal = ExtResource("17_r2ke6")
+action = "dash"

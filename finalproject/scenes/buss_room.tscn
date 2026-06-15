@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgsryudg5obal"]
+[gd_scene load_steps=5 format=3 uid="uid://dgsryudg5obal"]
 
 [ext_resource type="PackedScene" uid="uid://c2enm4dpmmrd1" path="res://scenes/player.tscn" id="1_b727d"]
 [ext_resource type="PackedScene" uid="uid://d4de168bwuqj2" path="res://scenes/MobileControls.tscn" id="2_g5hjy"]
 [ext_resource type="PackedScene" uid="uid://bjts8iylffk5g" path="res://scenes/boss_map.tscn" id="3_g5hjy"]
+[ext_resource type="PackedScene" uid="uid://bad560sbl7hc3" path="res://scenes/boss.tscn" id="4_bfcel"]
 
 [node name="BussRoom" type="Node2D"]
 
@@ -14,3 +15,15 @@ position = Vector2(118, -104)
 
 [node name="MobileControls" parent="." instance=ExtResource("2_g5hjy")]
 layer = 10
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = -1042.0
+offset_top = -1053.0
+offset_right = 1336.0
+offset_bottom = -759.0
+theme_override_font_sizes/font_size = 180
+text = "There's nothing here yet :p"
+
+[node name="Boss" parent="." instance=ExtResource("4_bfcel")]
+position = Vector2(601, -576)

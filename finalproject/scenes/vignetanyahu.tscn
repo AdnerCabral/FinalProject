@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ih8h3m1lsbsj"]
+
+[ext_resource type="Texture2D" uid="uid://cp3sn6nk5tbhf" path="res://assets/595FAD8C-E33F-4E12-A974-9B2D043A2BA3.png.eac9bd8cac80378692e4115553790af8.png" id="1_flxsh"]
+
+[node name="Vignetanyahu" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(587, 0)
+repeat_times = 999
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(576.5, 321.5)
+scale = Vector2(0.30599, 0.310648)
+texture = ExtResource("1_flxsh")
